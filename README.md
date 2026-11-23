@@ -22,6 +22,7 @@ repo. Keep anything machine-specific outside git.
 - [ ] Mount the data SSD at `/data` and move XDG folders → [02-storage-and-xdg.md](docs/02-storage-and-xdg.md)
 - [ ] Shader cache, I/O scheduler, zram → [03-performance.md](docs/03-performance.md)
 - [ ] EasyEffects and presets → [04-audio.md](docs/04-audio.md)
+- [ ] Install Claude Code and set up the VS Code extension → [05-claude-code.md](docs/05-claude-code.md)
 - [ ] Reboot and log back in so the mount, zram, and shader-cache changes apply
 
 ## The setup in short
@@ -36,6 +37,7 @@ repo. Keep anything machine-specific outside git.
 | Audio | EasyEffects + LV2 plugins + JackHack96 presets |
 | Hardware | `asusctl` / `rog-control-center` for ASUS profiles, fans, and RGB; `power-profiles-daemon` disabled and masked |
 | Apps | OnlyOffice, Discord, LocalSend, Etcher, Prism, Chromium, VS Code, JDK 8/17/21/25 |
+| AI tooling | Claude Code CLI + VS Code extension, pointed at DeepSeek's Anthropic-compatible endpoint |
 | Editor | `micro` for every edit (installed in chapter 1); if an old snippet says `nano`, `vim`, or `vi`, use `micro` instead |
 
 ## Repo map
@@ -46,6 +48,7 @@ repo. Keep anything machine-specific outside git.
 | [02-storage-and-xdg.md](docs/02-storage-and-xdg.md) | `/data` mount unit, ownership, symlinks, XDG user dirs |
 | [03-performance.md](docs/03-performance.md) | shader cache, udev I/O scheduler rules, zram lz4 |
 | [04-audio.md](docs/04-audio.md) | EasyEffects packages, preset import, autoload |
+| [05-claude-code.md](docs/05-claude-code.md) | Claude Code install, Fish env, shared settings, VS Code extension |
 
 ## Ground rules
 
