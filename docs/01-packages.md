@@ -63,6 +63,9 @@ On CachyOS these are in the official repositories. On vanilla Arch,
 EasyEffects and its plugins. The preset setup itself is in
 [04-audio.md](04-audio.md).
 
+> **Source:** The audio and OBS package recommendations come from the CachyOS
+> Wiki, [General system tweaks — Audio and software enhancements](https://wiki.cachyos.org/configuration/general_system_tweaks/#audio-and-software-enhancements).
+
 ```bash
 sudo pacman -S --needed easyeffects lsp-plugins-lv2 zam-plugins calf mda.lv2
 ```

@@ -5,6 +5,9 @@ cache, an I/O scheduler chosen by device type, and zram with lz4.
 
 ## Shader cache (NVIDIA and Mesa)
 
+> **Source:** CachyOS Wiki,
+> [Gaming — Increase maximum shader cache size](https://wiki.cachyos.org/configuration/gaming/#increase-maximum-shader-cache-size).
+
 Games compile shaders the first time they see them. The default cache is small
 enough that large games keep recompiling; raising the limit avoids some
 stutters and long first loads.
@@ -46,6 +49,9 @@ Cache locations, in case a corrupt cache ever needs clearing:
 ```
 
 ## I/O scheduler: adios for SSDs, bfq for HDDs
+
+> **Source:** CachyOS Wiki,
+> [General system tweaks — ADIOS I/O scheduler](https://wiki.cachyos.org/configuration/general_system_tweaks/#adios-io-scheduler).
 
 Create the udev rule:
 

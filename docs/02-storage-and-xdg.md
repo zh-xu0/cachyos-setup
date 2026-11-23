@@ -3,6 +3,10 @@
 Goal: mount the secondary SSD at `/data`, keep the real user folders there, put
 symlinks in `$HOME`, and point the XDG user directories at `/data`.
 
+> **Source:** Adapted from the CachyOS Wiki,
+> [Automount with fstab — Safer and beginner-friendly method: mounting drives with systemd mount files](https://wiki.cachyos.org/configuration/automount_with_fstab/#safer-and-beginner-friendly-method-mounting-drives-with-systemd-mount-files).
+> I adapted the unit template and added the ownership and XDG-symlink steps.
+
 > **Before mounting:** `/data` must be empty (or already the mounted disk).
 > Anything sitting in `/data` before the mount is hidden underneath it. Check
 > with `ls -A /data`.

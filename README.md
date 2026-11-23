@@ -57,3 +57,26 @@ repo. Keep anything machine-specific outside git.
   AUR packages are built as my user.
 - These are preferences, not universal best practices. If a future kernel or
   desktop changes behavior, verify the result instead of trusting the note.
+
+## Sources
+
+Parts of these notes are adapted from the CachyOS Wiki:
+
+- [Automount with fstab — systemd mount files](https://wiki.cachyos.org/configuration/automount_with_fstab/#safer-and-beginner-friendly-method-mounting-drives-with-systemd-mount-files) — chapter 2.
+- [Gaming — Increase maximum shader cache size](https://wiki.cachyos.org/configuration/gaming/#increase-maximum-shader-cache-size) — chapter 3.
+- [General system tweaks — ADIOS I/O scheduler](https://wiki.cachyos.org/configuration/general_system_tweaks/#adios-io-scheduler) — chapter 3.
+- [General system tweaks — Audio and software enhancements](https://wiki.cachyos.org/configuration/general_system_tweaks/#audio-and-software-enhancements) — chapters 1 and 4.
+
+At the time of writing (2026-11-23), the CachyOS Wiki pages and the
+`CachyOS/wiki` repository show no explicit content license. These links are
+attribution only; the original authors retain whatever rights they have in the
+source material.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+The MIT license covers my original writing only. Adapted sections listed under
+Sources are not relicensed beyond what their original terms allow. Third-party
+projects linked here (for example the EasyEffects presets) keep their own
+licenses.

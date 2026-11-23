@@ -3,6 +3,10 @@
 EasyEffects plus a few LV2 plugin packs makes the laptop speakers sound much
 better than the stock tuning.
 
+> **Source:** CachyOS Wiki,
+> [General system tweaks — Audio and software enhancements](https://wiki.cachyos.org/configuration/general_system_tweaks/#audio-and-software-enhancements).
+> The JackHack96 presets linked below are a separate third-party project.
+
 ## Packages
 
 If the package step in [01-packages.md](01-packages.md) has not been done:
