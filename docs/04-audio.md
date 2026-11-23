@@ -1,6 +1,6 @@
 # 04 — Audio (EasyEffects)
 
-EasyEffects plus a few LV2 plugin packs makes the laptop speakers sound much
+EasyEffects plus a few LV2 plugin packs makes the speakers sound much
 better than the stock tuning.
 
 > **Source:** CachyOS Wiki,

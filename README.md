@@ -1,10 +1,11 @@
-# CachyOS Laptop Notes
+# CachyOS Setup Notes
 
 My personal, copy-pasteable notes for setting up CachyOS the way I like it.
-This is a guide for future laptops, not an installer: read a section, run the
+This is a guide for future machines, not an installer: read a section, run the
 commands, and adapt package names to the machine.
 
-**Tested on:** CachyOS rolling, KDE Plasma, ASUS laptop.
+**Tested on:** CachyOS rolling + KDE Plasma. Hardware-specific sections (for
+example ASUS) are marked and can be skipped on other machines.
 Commands assume an Arch-based system (`pacman`, `paru`) and CachyOS package
 names. On vanilla Arch, a few packages may live in the AUR instead.
 
@@ -16,7 +17,7 @@ names. On vanilla Arch, a few packages may live in the AUR instead.
 No real UUIDs, API keys, tokens, hostnames, or account details belong in this
 repo. Keep anything machine-specific outside git.
 
-## Fresh-laptop checklist
+## Fresh-install checklist
 
 - [ ] Update the system and install my package set → [01-packages.md](docs/01-packages.md)
 - [ ] Mount the data SSD at `/data` and move XDG folders → [02-storage-and-xdg.md](docs/02-storage-and-xdg.md)
@@ -35,7 +36,7 @@ repo. Keep anything machine-specific outside git.
 | I/O scheduler | **adios** for NVMe/SATA SSDs, **bfq** for spinning disks, applied by udev |
 | GPU shaders | 12 GB shader cache (NVIDIA via `__GL_SHADER_DISK_CACHE_SIZE`, Mesa via `MESA_SHADER_CACHE_MAX_SIZE`) |
 | Audio | EasyEffects + LV2 plugins + JackHack96 presets |
-| Hardware | `asusctl` / `rog-control-center` for ASUS profiles, fans, and RGB; `power-profiles-daemon` disabled and masked |
+| Hardware (ASUS-specific) | `asusctl` / `rog-control-center` for ASUS profiles, fans, and RGB; `power-profiles-daemon` disabled and masked. Skip on non-ASUS machines. |
 | Apps | OnlyOffice, Discord, LocalSend, Etcher, Prism, Chromium, VS Code, JDK 8/17/21/25 |
 | AI tooling | Claude Code CLI + VS Code extension, pointed at DeepSeek's Anthropic-compatible endpoint |
 | Editor | `micro` for every edit (installed in chapter 1); if an old snippet says `nano`, `vim`, or `vi`, use `micro` instead |
@@ -44,7 +45,7 @@ repo. Keep anything machine-specific outside git.
 
 | File | Contents |
 | --- | --- |
-| [01-packages.md](docs/01-packages.md) | pacman/AUR package list, Java, OnlyOffice, ASUS tools, power profiles, `tldr` |
+| [01-packages.md](docs/01-packages.md) | pacman/AUR package list, Java, OnlyOffice, optional ASUS tools, power profiles, `tldr` |
 | [02-storage-and-xdg.md](docs/02-storage-and-xdg.md) | `/data` mount unit, ownership, symlinks, XDG user dirs |
 | [03-performance.md](docs/03-performance.md) | shader cache, udev I/O scheduler rules, zram lz4 |
 | [04-audio.md](docs/04-audio.md) | EasyEffects packages, preset import, autoload |

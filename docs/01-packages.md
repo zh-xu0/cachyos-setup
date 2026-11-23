@@ -81,7 +81,7 @@ sudo pacman -S --needed obs-studio-browser
 `obs-studio-browser` is the CachyOS build with the browser source. On vanilla
 Arch the package is `obs-studio` (browser support may be a separate package).
 
-### ASUS ROG / TUF tools
+### ASUS ROG / TUF tools (ASUS-only)
 
 ```bash
 sudo pacman -S --needed asusctl rog-control-center

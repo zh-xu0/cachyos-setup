@@ -137,7 +137,7 @@ fails because the swap device is busy, a full reboot applies the change.
 Notes:
 
 - `zram-size = ram` creates a compressed swap device the size of RAM. On a
-  32 GB laptop that is roughly 31 GiB of zram. Lower the value if that much
+  32 GB machine that is roughly 31 GiB of zram. Lower the value if that much
   swap encourages bad memory behavior; I keep it as-is.
 - The old default is usually `zstd`. To go back, change the algorithm and
   restart the unit again.
