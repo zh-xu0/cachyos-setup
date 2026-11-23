@@ -22,7 +22,7 @@ repo. Keep anything machine-specific outside git.
 - [ ] Mount the data SSD at `/data` and move XDG folders → [02-storage-and-xdg.md](docs/02-storage-and-xdg.md)
 - [ ] Shader cache, I/O scheduler, zram → [03-performance.md](docs/03-performance.md)
 - [ ] EasyEffects and presets → [04-audio.md](docs/04-audio.md)
-- [ ] Reboot, verify, fix problems → [05-troubleshooting.md](docs/05-troubleshooting.md)
+- [ ] Reboot and log back in so the mount, zram, and shader-cache changes apply
 
 ## The setup in short
 
@@ -34,19 +34,18 @@ repo. Keep anything machine-specific outside git.
 | I/O scheduler | **adios** for NVMe/SATA SSDs, **bfq** for spinning disks, applied by udev |
 | GPU shaders | 12 GB shader cache (NVIDIA via `__GL_SHADER_DISK_CACHE_SIZE`, Mesa via `MESA_SHADER_CACHE_MAX_SIZE`) |
 | Audio | EasyEffects + LV2 plugins + JackHack96 presets |
-| Hardware | `asusctl` / `rog-control-center` for ASUS ROG/TUF features |
+| Hardware | `asusctl` / `rog-control-center` for ASUS profiles, fans, and RGB; `power-profiles-daemon` disabled and masked |
 | Apps | OnlyOffice, Discord, LocalSend, Etcher, Prism, Chromium, VS Code, JDK 8/17/21/25 |
-| Editor | `micro` in all examples (substitute `nano`/`vim` if needed) |
+| Editor | `micro` for every edit (installed in chapter 1); if an old snippet says `nano`, `vim`, or `vi`, use `micro` instead |
 
 ## Repo map
 
 | File | Contents |
 | --- | --- |
-| [01-packages.md](docs/01-packages.md) | pacman/AUR package list, Java, OnlyOffice, ASUS tools, `tldr` |
+| [01-packages.md](docs/01-packages.md) | pacman/AUR package list, Java, OnlyOffice, ASUS tools, power profiles, `tldr` |
 | [02-storage-and-xdg.md](docs/02-storage-and-xdg.md) | `/data` mount unit, ownership, symlinks, XDG user dirs |
 | [03-performance.md](docs/03-performance.md) | shader cache, udev I/O scheduler rules, zram lz4 |
 | [04-audio.md](docs/04-audio.md) | EasyEffects packages, preset import, autoload |
-| [05-troubleshooting.md](docs/05-troubleshooting.md) | checks, common failures, how to undo a tweak |
 
 ## Ground rules
 

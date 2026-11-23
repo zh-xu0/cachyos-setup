@@ -65,49 +65,38 @@ the whole drive, so it can take a while when the disk is already full.
 ## 5. Move the home folders and symlink them
 
 Run this as my normal user, with file managers and document apps closed.
-It is safe to re-run: existing symlinks are skipped.
+
+This step assumes `/data` was freshly mounted and does **not** already contain
+folders with these names. Check first with `ls /data`.
+
+Make sure the source folders exist (KDE creates most of them anyway):
 
 ```bash
-dirs=(Desktop Documents Downloads Music Pictures Videos Public Templates Projects)
-
-for dir in "${dirs[@]}"; do
-  target="/data/$dir"
-  link="$HOME/$dir"
-
-  if [ -L "$link" ]; then
-    echo "skip $dir: already a symlink -> $(readlink "$link")"
-    continue
-  fi
-
-  if [ -e "$link" ] && [ ! -d "$link" ]; then
-    echo "skip $dir: $link exists and is not a directory"
-    continue
-  fi
-
-  if [ -d "$link" ]; then
-    if [ -e "$target" ]; then
-      echo "skip $dir: both $link and $target exist; merge manually"
-      continue
-    fi
-    mv "$link" "$target"
-  else
-    mkdir -p "$target"
-  fi
-
-  ln -s "$target" "$link"
-done
+mkdir -p ~/{Desktop,Documents,Downloads,Music,Pictures,Videos,Public,Templates,Projects}
 ```
 
-Why the checks: the simple form `mv ~/Documents /data/ && ln -s ...` nests the
-folder if `/data/Documents` already exists. This loop moves the folder when the
-target is free, creates the target when the home folder is missing, and refuses
-to guess when both sides have content.
-
-Single-folder equivalent, only when `/data/Documents` does **not** exist:
+Then move each folder to `/data` and leave a symlink behind:
 
 ```bash
+mv ~/Desktop   /data/ && ln -s /data/Desktop   ~/Desktop
 mv ~/Documents /data/ && ln -s /data/Documents ~/Documents
+mv ~/Downloads /data/ && ln -s /data/Downloads ~/Downloads
+mv ~/Music     /data/ && ln -s /data/Music     ~/Music
+mv ~/Pictures  /data/ && ln -s /data/Pictures  ~/Pictures
+mv ~/Videos    /data/ && ln -s /data/Videos    ~/Videos
+mv ~/Public    /data/ && ln -s /data/Public    ~/Public
+mv ~/Templates /data/ && ln -s /data/Templates ~/Templates
+mv ~/Projects  /data/ && ln -s /data/Projects  ~/Projects
 ```
+
+Each line only creates the symlink if the `mv` succeeded. Run this once: after
+it finishes, the home folders are symlinks, so running the same `mv` again
+would move the symlink itself.
+
+If a folder already exists under `/data` (for example after a partial run),
+`mv` would put the home folder *inside* it instead of replacing it. In that
+case merge the two folders manually, then create the symlink yourself, or skip
+that line.
 
 ## 6. Point XDG at /data
 

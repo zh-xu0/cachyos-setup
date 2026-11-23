@@ -49,7 +49,7 @@ upstream repo instead of re-hosting them.
 
 1. Open EasyEffects.
 2. Go to **Presets → Import** (output side) and select the preset JSON.
-3. Pick one, for example `Bass Enhancing + Perfect EQ` or `Laptop`.
+3. Pick one, for example `Perfect EQ` or `Laptop`.
 4. Set up **Autoload** for the built-in output device so the preset loads
    automatically at login.
 5. For games, prefer the **Low Latency** variants — the normal presets can add
@@ -57,14 +57,3 @@ upstream repo instead of re-hosting them.
 
 If the preset list is empty, restart EasyEffects after copying the files, and
 confirm they are in the correct directory for the installed version.
-
-## Quick checks
-
-```bash
-easyeffects --version
-systemctl --user status pipewire wireplumber
-pactl info | head
-```
-
-EasyEffects costs some CPU and adds latency. For competitive games I either
-disable it or use a low-latency preset.

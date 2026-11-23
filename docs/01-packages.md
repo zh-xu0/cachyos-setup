@@ -6,14 +6,16 @@ safe: packages that are already installed are skipped.
 ## First, update
 
 ```bash
-paru -Syu
+sudo pacman -Syu
 ```
 
-`paru -Syu` updates both the official repositories and the AUR. On a fresh
-CachyOS install `paru` is already there. If it is missing, update with
-`sudo pacman -Syu` and install `paru` from the CachyOS repository.
-
 ## Official repository packages
+
+### Editor
+
+```bash
+sudo pacman -S --needed micro
+```
 
 ### Browser, chat, sharing, office
 
@@ -85,13 +87,8 @@ sudo pacman -S --needed asusctl rog-control-center
 Useful commands:
 
 ```bash
-asusctl profile list
-asusctl profile get
-
-# Profiles: Quiet, Balanced, Performance
-asusctl profile set Balanced
-asusctl profile set -a Performance   # profile while on AC power
-asusctl profile set -b Quiet         # profile while on battery
+sudo systemctl disable --now power-profiles-daemon.service
+sudo systemctl mask power-profiles-daemon.service
 ```
 
 `asusd` is D-Bus activated; it starts on demand when `asusctl` or
@@ -119,19 +116,6 @@ paru -S --needed polychromatic ttf-ms-fonts ttf-wps-fonts visual-studio-code-bin
 ```bash
 tldr --update
 ```
-
-## Package-name gotchas
-
-These bit me when I copied old notes:
-
-| Old note | Use this | Reason |
-| --- | --- | --- |
-| `sudo pacman -S onlyoffice ...` | `onlyoffice-bin` | `onlyoffice` is not a CachyOS package |
-| `appmenu-gtk-module libdbusmenu-glib` listed as AUR | official on CachyOS | may be AUR on vanilla Arch |
-| `etcher-bin`, `obs-studio-browser`, `lsp-plugins-lv2`, `jdk25-openjdk` | CachyOS repos | names can differ elsewhere |
-| `mda-lv2` | `mda.lv2` | dot in the package name |
-
-If a package is not found, search both repositories and the AUR:
 
 ```bash
 pacman -Ss <package>
