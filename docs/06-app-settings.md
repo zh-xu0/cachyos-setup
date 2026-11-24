@@ -40,7 +40,7 @@ Download this file: https://github.com/catppuccin/konsole/blob/main/themes/catpp
 5. Open the **Appearence** tab and select your flavor.
 6. Click **Apply**, then **OK**.
 
-Background color transparency 
+Background color transparency: 10% 
 
 ### KDE: https://github.com/catppuccin/kde
 
