@@ -24,6 +24,7 @@ repo. Keep anything machine-specific outside git.
 - [ ] Shader cache, I/O scheduler, zram → [03-performance.md](docs/03-performance.md)
 - [ ] EasyEffects and presets → [04-audio.md](docs/04-audio.md)
 - [ ] Install Claude Code and set up the VS Code extension → [05-claude-code.md](docs/05-claude-code.md)
+- [ ] Apply the small per-app settings → [06-app-settings.md](docs/06-app-settings.md)
 - [ ] Reboot and log back in so the mount, zram, and shader-cache changes apply
 
 ## The setup in short
@@ -50,6 +51,7 @@ repo. Keep anything machine-specific outside git.
 | [03-performance.md](docs/03-performance.md) | shader cache, udev I/O scheduler rules, zram lz4 |
 | [04-audio.md](docs/04-audio.md) | EasyEffects packages, preset import, autoload |
 | [05-claude-code.md](docs/05-claude-code.md) | Claude Code install, Fish env, shared settings, VS Code extension |
+| [06-app-settings.md](docs/06-app-settings.md) | Small per-app tweaks (Firefox, Dolphin, …), one line each |
 
 ## Ground rules
 
