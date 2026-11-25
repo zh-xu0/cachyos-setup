@@ -1,3 +1,4 @@
+
 # 03 — Performance tweaks
 
 Three independent tweaks I apply on every CachyOS install: a larger GPU shader
@@ -141,3 +142,29 @@ Notes:
   swap encourages bad memory behavior; I keep it as-is.
 - The old default is usually `zstd`. To go back, change the algorithm and
   restart the unit again.
+
+## Power saving tweaks
+
+> **Source:** CachyOS Wiki,
+> [General system tweaks — Power Saving Tweaks](https://wiki.cachyos.org/configuration/general_system_tweaks/#power-saving-tweaks).
+
+Intel only. thermald is a thermal management daemon for Intel systems. It monitors thermal sensors and applies cooling actions, such as CPU power limits or performance-state changes, before the firmware needs to use more aggressive throttling.
+
+```bash
+sudo pacman -S thermald
+sudo systemctl enable --now thermald.service
+```
+Verify with
+
+```bash
+systemctl status thermald.service
+journalctl -u thermald.service -b
+```
+
+And then enable RCU Lazy. RCU Lazy helps reducing the power usage at idle or lightly loaded systems. This can be useful for laptops and handheld devices. The improvement is between 5-10% in terms of power savings.
+
+```bash
+sudo micro /etc/default/limine
+```
+
+Add `rcu_nocbs=all rcutree.enable_rcu_lazy=1`. Lastly remake `sudo limine-mkinitcpio`
