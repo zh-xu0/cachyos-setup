@@ -47,4 +47,8 @@ Background color transparency: 10%
 1. `git clone --depth=1 https://github.com/catppuccin/kde catppuccin-kde && cd catppuccin-kde`
 2. Run the install script using `./install.sh` and follow the instructions.
 
+## Arch-Update
 
+```bash
+systemctl --user edit --full arch-update.timer
+```
